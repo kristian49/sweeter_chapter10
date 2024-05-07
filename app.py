@@ -1,10 +1,12 @@
+import jwt
+import hashlib
+import os
 from flask import Flask, render_template, jsonify, request, redirect, url_for
 from pymongo import MongoClient
 from datetime import datetime, timedelta
 from werkzeug.utils import secure_filename
-import jwt
-import hashlib
-import os
+from os.path import join, dirname
+from dotenv import load_dotenv
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
